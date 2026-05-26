@@ -26,7 +26,7 @@ df["Nombre"] = df["Nombre"].astype(str) # Aseguramos que la columna 'Nombre' sea
 estados = {1:"Borrador",2:"Publicada",3:"Cerrada",4:"Desierta",
            5:"Adjudicada",6:"En proceso",7:"Revocada",8:"Suspendida"}
 df["Estado"] = df["CodigoEstado"].map(estados)
-df["FechaCierre"] = pd.to_datetime(df["FechaCierre"])
+df["FechaCierre"] = pd.to_datetime(df["FechaCierre"], format="mixed")
 
 # Sidebar para filtros y métricas
 with st.sidebar:
